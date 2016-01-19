@@ -41,8 +41,8 @@
         //设置分页
         _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, _viewHeight-30, _viewWidth, 30)];
         _pageControl.userInteractionEnabled = NO;
-        _pageControl.currentPageIndicatorTintColor = [UIColor redColor];
-        _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+        _pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+        _pageControl.pageIndicatorTintColor = [UIColor grayColor];
         [self addSubview:_pageControl];
         
         //设置单击手势
@@ -122,7 +122,7 @@
     //手动滑动时候暂停自动替换
     [_autoScrollTimer invalidate];
     _autoScrollTimer = nil;
-    _autoScrollTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(autoShowNextImage) userInfo:nil repeats:YES];
+    _autoScrollTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(autoShowNextImage) userInfo:nil repeats:YES];
     
     //得到当前页数
     float x = _scrollView.contentOffset.x;
@@ -145,6 +145,11 @@
         }
     }
     
+    if([self.delegate respondsToSelector:@selector(scrollNextImgView:)])
+    {
+        [self.delegate scrollNextImgView:_currentPage];
+    }
+    
     [self reloadData];
 }
 
@@ -154,7 +159,7 @@
     if (shouldStart)  //开启自动翻页
     {
         if (!_autoScrollTimer) {
-            _autoScrollTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(autoShowNextImage) userInfo:nil repeats:YES];
+            _autoScrollTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(autoShowNextImage) userInfo:nil repeats:YES];
         }
     }
     else   //关闭自动翻页
@@ -176,6 +181,11 @@
     }
     
     [self reloadData];
+    
+    if([self.delegate respondsToSelector:@selector(scrollNextImgView:)])
+    {
+        [self.delegate scrollNextImgView:_currentPage];
+    }
 }
 
 @end

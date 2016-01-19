@@ -15,32 +15,47 @@
     self = [super initWithFrame:frame];
     if(self)
     {
-        scrollandPageView = [[BEScrollAndPageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        self.scrollandPageView = [[BEScrollAndPageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         
+        self.imageViewLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, self.frame.size.height - 80, self.frame.size.width - 20, 60)];
+        self.imageViewLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.imageViewLabel.numberOfLines = 0;
+        self.imageViewLabel.font = [UIFont systemFontOfSize:20.f];
+        self.imageViewLabel.textColor = [UIColor whiteColor];
     }
     return self;
 }
 
+#pragma -mark 解析传过来的model数组
 -(void)setImageArray:(NSMutableArray *)imageArray
 {
     _imageArray = imageArray;
-    for (int i=1; i<6; i++) {
+    NSMutableArray *imgViewArray = [NSMutableArray array];
+    for (int i=0; i < 6; i++) {
+        BEScrollPageSubject *subject = imageArray[i];
         UIImageView *imageView = [[UIImageView alloc] init];
-        imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"image%d",i]];
-        [_imageArray addObject:imageView];
+        NSURL *imageUrl = [NSURL URLWithString:subject.imageUrl];
+        [imageView setImageWithURL:imageUrl];
+        [imgViewArray addObject:imageView];
     }
     //把imageView数组存到whView里
-    [scrollandPageView setImageViewAry:_imageArray];
+    [self.scrollandPageView setImageViewAry:imgViewArray];
     
     //把图片展示的view加到当前页面
-    [self addSubview:scrollandPageView];
+    [self addSubview:self.scrollandPageView];
+    
+    BEScrollPageSubject *sub = imageArray[0];
+    self.imageViewLabel.text = sub.title;
+    [self.scrollandPageView addSubview:self.imageViewLabel];
     
     //开启自动翻页
-    [scrollandPageView shouldAutoShow:YES];
+    [self.scrollandPageView shouldAutoShow:YES];
     
     //遵守协议
-    scrollandPageView.delegate = self;
+    self.scrollandPageView.delegate = self;
 }
+
+
 
 
 #pragma mark 协议里面方法，点击某一页
@@ -49,12 +64,14 @@
     NSLog(@"点击了第%ld页",(long)index);
 }
 
+#pragma mark scrollerView跳转到下一页，主要改变图片上新闻标题
+-(void)scrollNextImgView:(NSInteger)pageNum
+{
+    BEScrollPageSubject *subject = self.imageArray[pageNum];
+    self.imageViewLabel.text = subject.title;
+}
 
-//#pragma mark 界面消失的时候，停止自动滚动
-//-(void)viewDidDisappear:(BOOL)animated
-//{
-//    [_whView shouldAutoShow:NO];
-//}
+
 
 
 @end

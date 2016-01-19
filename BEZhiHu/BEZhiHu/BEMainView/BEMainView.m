@@ -15,46 +15,112 @@
     self = [super initWithFrame:frame];
     if(self)
     {
-        self.topItemView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 64)];
+        self.topItemView = [[UIView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, 64)];
         self.topItemView.backgroundColor = [UIColor blueColor];
         self.topItemView.alpha = 0.0f;
-        [self addSubview:self.topItemView];
+        UILabel *itemLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width / 2 - 40, 68, 80, 20)];
+        itemLabel.text = @"今日热闻";
+        itemLabel.textAlignment = NSTextAlignmentCenter;
+        itemLabel.textColor = [UIColor whiteColor];
         
-        self.dataArray = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"1",@"2",@"3", nil];
+        self.dataArray = [NSMutableArray array];
         
         self.headerView = [[BETableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, (self.frame.size.height - 64) / 2)];
        // self.headerView.backgroundColor = [UIColor redColor];
-        self.tableViewBE = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.frame.size.width, self.frame.size.height - 64)];
+        self.tableViewBE = [[BETableViewRefresh alloc] initWithFrame:CGRectMake(0, -40, self.frame.size.width, self.frame.size.height + 40)];
         self.tableViewBE.delegate = self;
-        self.tableViewBE.dataSource = self;
-        self.tableViewBE.tableHeaderView = self.headerView;
+        self.tableViewBE.tableViewBE.tableHeaderView = self.headerView;
         [self addSubview:self.tableViewBE];
+        
+        [self.tableViewBE addSubview:self.topItemView];
+        [self.tableViewBE addSubview:itemLabel];
+        
+        [self loadScrollerPageData];
     }
     return self;
 }
 
-#pragma -mark UITableViewDelegate
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+#pragma -mark 请求数据scrollPage数据
+-(void)loadScrollerPageData
 {
-    return 1;
+    [BEAFNetworking get:ScrollerAndPageURL params:nil success:^(id responseObj) {
+        NSLog(@"%@",responseObj);
+        NSString *dateString = responseObj[@"date"];
+        NSMutableArray *arr = responseObj[@"stories"];
+        NSMutableArray *scrollDaraArray = [NSMutableArray array];
+        for(int i = 0;i < arr.count; i++)
+        {
+            NSDictionary *dic = arr[i];
+            BEScrollPageSubject *subject = [BEScrollPageSubject new];
+            subject.dateStr = dateString;
+            subject.noteID = dic[@"id"];
+            subject.title = dic[@"title"];
+            subject.imageUrl = dic[@"images"][0];
+            if(i < 6)
+            {
+                NSString *urlBigImage = [NSString stringWithFormat:@"%@%@",GetBigImageByIdURL,dic[@"id"]];
+                [BEAFNetworking get:urlBigImage params:nil success:^(id responseObj) {
+                    subject.imageUrl = responseObj[@"image"];
+                    [scrollDaraArray addObject:subject];
+                    if(scrollDaraArray.count > 5)
+                    {
+                        self.headerView.imageArray = scrollDaraArray;
+                    }
+                } failure:^(NSError *error) {
+                    NSLog(@"%@",error);
+                }];
+            }else
+            {
+                [self.dataArray addObject:subject];
+            }
+        }
+        self.tableViewBE.dataArray = self.dataArray;
+    } failure:^(NSError *error) {
+        NSLog(@"error:%@",error);
+    }];
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+#pragma 刷新 加载更多
+-(void)loadRefreshData
 {
-    return self.dataArray.count;
+    [self loadScrollerPageData];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)loadMoreData:(NSString *)date
 {
-    static NSString *cellIdentity = @"UITableViewCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentity];
-    if(!cell)
+    NSString *urlMore = [NSString stringWithFormat:@"%@%@",LoadMoreDataURL,date];
+    [BEAFNetworking get:urlMore params:nil success:^(id responseObj) {
+        NSLog(@"%@",responseObj);
+        NSString *dateString = responseObj[@"date"];
+        NSMutableArray *arr = responseObj[@"stories"];
+        for(NSDictionary *dic in arr)
+        {
+            BEScrollPageSubject *subject = [BEScrollPageSubject new];
+            subject.dateStr = dateString;
+            subject.noteID = dic[@"id"];
+            subject.title = dic[@"title"];
+            subject.imageUrl = dic[@"images"][0];
+            [self.dataArray addObject:subject];
+        }
+        self.tableViewBE.dataArray = self.dataArray;
+    } failure:^(NSError *error) {
+        NSLog(@"error:%@",error);
+    }];
+    
+}
+
+#pragma -mark tableView的代理，计算topView透明度
+-(void)moveContentOffSet:(CGFloat)yMove
+{
+    NSLog(@"%f",yMove);
+    if(yMove >= 0)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentity];
+        self.topItemView.alpha = yMove / 64;
+    }else
+    {
+//        self.headerView.scrollandPageView.frame = 
     }
-    cell.textLabel.text = self.dataArray[indexPath.row];
-    return cell;
 }
+
 
 @end

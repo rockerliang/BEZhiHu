@@ -1,0 +1,27 @@
+//
+//  PrefixHeader.pch
+//  BEZhiHu
+//
+//  Created by ihefe26 on 16/1/19.
+//  Copyright © 2016年 zhangliang. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//用到的头文件
+#import "BEAFNetworking.h"
+#import "UIImageView+AFNetworking.h"
+
+
+//URL
+//首页循环滚动 最新新闻的url
+#define ScrollerAndPageURL  @"http://news-at.zhihu.com/api/4/news/latest"
+
+//通过新闻id获取大图url
+#define GetBigImageByIdURL  @"http://news-at.zhihu.com/api/4/news/"
+
+//过往消息，加载更多消息使用
+#define LoadMoreDataURL @"http://news.at.zhihu.com/api/4/news/before/"
+
+#endif /* PrefixHeader_pch */

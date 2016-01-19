@@ -8,7 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		4FF3B8E96937105A3B069DCC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB511F3D7AA69B37E89411F /* libPods.a */; };
+		C44401191C4E2F31005DE1D7 /* BEDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44401181C4E2F31005DE1D7 /* BEDetailViewController.m */; };
 		C47C69A61C4DD57300CDA60C /* BEScrollAndPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C69A51C4DD57300CDA60C /* BEScrollAndPageView.m */; };
+		C47C69AD1C4DE48D00CDA60C /* BEAFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C69AA1C4DE48D00CDA60C /* BEAFNetworking.m */; };
+		C47C69AE1C4DE48D00CDA60C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C69AC1C4DE48D00CDA60C /* Reachability.m */; };
+		C47C69B21C4DE62F00CDA60C /* BEScrollPageSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C69B11C4DE62F00CDA60C /* BEScrollPageSubject.m */; };
+		C47C69BA1C4E06CD00CDA60C /* BETableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C69B81C4E06CD00CDA60C /* BETableViewCell.m */; };
+		C47C69BB1C4E06CD00CDA60C /* BETableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47C69B91C4E06CD00CDA60C /* BETableViewCell.xib */; };
+		C47C69C61C4E0A3200CDA60C /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C47C69BC1C4E0A3200CDA60C /* 1.jpg */; };
+		C47C69C71C4E0A3200CDA60C /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C47C69BD1C4E0A3200CDA60C /* 2.jpg */; };
+		C47C69C81C4E0A3200CDA60C /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C47C69BE1C4E0A3200CDA60C /* 3.jpg */; };
+		C47C69C91C4E0A3200CDA60C /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C47C69BF1C4E0A3200CDA60C /* 4.jpg */; };
+		C47C69CA1C4E0A3200CDA60C /* BELoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C69C11C4E0A3200CDA60C /* BELoadMoreView.m */; };
+		C47C69CB1C4E0A3200CDA60C /* BERefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C69C31C4E0A3200CDA60C /* BERefreshHeaderView.m */; };
+		C47C69CC1C4E0A3200CDA60C /* BETableViewRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C69C51C4E0A3200CDA60C /* BETableViewRefresh.m */; };
 		C47D82F51C4DC73500C8BE11 /* BEZhiHuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C47D82F41C4DC73500C8BE11 /* BEZhiHuTests.m */; };
 		C47D83001C4DC73500C8BE11 /* BEZhiHuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C47D82FF1C4DC73500C8BE11 /* BEZhiHuUITests.m */; };
 		C47D831A1C4DC76D00C8BE11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C47D83101C4DC76D00C8BE11 /* AppDelegate.m */; };
@@ -42,8 +55,30 @@
 /* Begin PBXFileReference section */
 		6BB511F3D7AA69B37E89411F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E5B83DBE49BB8C0E352928 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C44401171C4E2F31005DE1D7 /* BEDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEDetailViewController.h; path = BEDetailPage/BEDetailViewController.h; sourceTree = "<group>"; };
+		C44401181C4E2F31005DE1D7 /* BEDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEDetailViewController.m; path = BEDetailPage/BEDetailViewController.m; sourceTree = "<group>"; };
 		C47C69A41C4DD57300CDA60C /* BEScrollAndPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEScrollAndPageView.h; path = BEMainView/BEScrollAndPageView.h; sourceTree = "<group>"; };
 		C47C69A51C4DD57300CDA60C /* BEScrollAndPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEScrollAndPageView.m; path = BEMainView/BEScrollAndPageView.m; sourceTree = "<group>"; };
+		C47C69A71C4DDC5F00CDA60C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C47C69A91C4DE48D00CDA60C /* BEAFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEAFNetworking.h; path = BENet/BEAFNetworking.h; sourceTree = "<group>"; };
+		C47C69AA1C4DE48D00CDA60C /* BEAFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEAFNetworking.m; path = BENet/BEAFNetworking.m; sourceTree = "<group>"; };
+		C47C69AB1C4DE48D00CDA60C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = BENet/Reachability.h; sourceTree = "<group>"; };
+		C47C69AC1C4DE48D00CDA60C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = BENet/Reachability.m; sourceTree = "<group>"; };
+		C47C69B01C4DE62F00CDA60C /* BEScrollPageSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEScrollPageSubject.h; path = BEMoel/BEScrollPageSubject.h; sourceTree = "<group>"; };
+		C47C69B11C4DE62F00CDA60C /* BEScrollPageSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEScrollPageSubject.m; path = BEMoel/BEScrollPageSubject.m; sourceTree = "<group>"; };
+		C47C69B71C4E06CD00CDA60C /* BETableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BETableViewCell.h; path = BEMainView/BETableView/BETableViewCell.h; sourceTree = "<group>"; };
+		C47C69B81C4E06CD00CDA60C /* BETableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BETableViewCell.m; path = BEMainView/BETableView/BETableViewCell.m; sourceTree = "<group>"; };
+		C47C69B91C4E06CD00CDA60C /* BETableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BETableViewCell.xib; path = BEMainView/BETableView/BETableViewCell.xib; sourceTree = "<group>"; };
+		C47C69BC1C4E0A3200CDA60C /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.jpg; path = BEMainView/BETableView/1.jpg; sourceTree = "<group>"; };
+		C47C69BD1C4E0A3200CDA60C /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.jpg; path = BEMainView/BETableView/2.jpg; sourceTree = "<group>"; };
+		C47C69BE1C4E0A3200CDA60C /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.jpg; path = BEMainView/BETableView/3.jpg; sourceTree = "<group>"; };
+		C47C69BF1C4E0A3200CDA60C /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.jpg; path = BEMainView/BETableView/4.jpg; sourceTree = "<group>"; };
+		C47C69C01C4E0A3200CDA60C /* BELoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BELoadMoreView.h; path = BEMainView/BETableView/BELoadMoreView.h; sourceTree = "<group>"; };
+		C47C69C11C4E0A3200CDA60C /* BELoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BELoadMoreView.m; path = BEMainView/BETableView/BELoadMoreView.m; sourceTree = "<group>"; };
+		C47C69C21C4E0A3200CDA60C /* BERefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERefreshHeaderView.h; path = BEMainView/BETableView/BERefreshHeaderView.h; sourceTree = "<group>"; };
+		C47C69C31C4E0A3200CDA60C /* BERefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERefreshHeaderView.m; path = BEMainView/BETableView/BERefreshHeaderView.m; sourceTree = "<group>"; };
+		C47C69C41C4E0A3200CDA60C /* BETableViewRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BETableViewRefresh.h; path = BEMainView/BETableView/BETableViewRefresh.h; sourceTree = "<group>"; };
+		C47C69C51C4E0A3200CDA60C /* BETableViewRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BETableViewRefresh.m; path = BEMainView/BETableView/BETableViewRefresh.m; sourceTree = "<group>"; };
 		C47D82D71C4DC73500C8BE11 /* BEZhiHu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BEZhiHu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47D82F01C4DC73500C8BE11 /* BEZhiHuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BEZhiHuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47D82F41C4DC73500C8BE11 /* BEZhiHuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BEZhiHuTests.m; sourceTree = "<group>"; };
@@ -110,6 +145,67 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C44401151C4E2ECB005DE1D7 /* BEMainPage(主页) */ = {
+			isa = PBXGroup;
+			children = (
+				C47D83181C4DC76D00C8BE11 /* ViewController.h */,
+				C47D83191C4DC76D00C8BE11 /* ViewController.m */,
+				C47C69AF1C4DE52C00CDA60C /* BEModel */,
+				C47C69A81C4DE46200CDA60C /* BENet */,
+				C47D83211C4DC77800C8BE11 /* BEMainView */,
+			);
+			name = "BEMainPage(主页)";
+			sourceTree = "<group>";
+		};
+		C44401161C4E2EE9005DE1D7 /* BEDetalPage(详情) */ = {
+			isa = PBXGroup;
+			children = (
+				C44401171C4E2F31005DE1D7 /* BEDetailViewController.h */,
+				C44401181C4E2F31005DE1D7 /* BEDetailViewController.m */,
+			);
+			name = "BEDetalPage(详情)";
+			sourceTree = "<group>";
+		};
+		C47C69A81C4DE46200CDA60C /* BENet */ = {
+			isa = PBXGroup;
+			children = (
+				C47C69A91C4DE48D00CDA60C /* BEAFNetworking.h */,
+				C47C69AA1C4DE48D00CDA60C /* BEAFNetworking.m */,
+				C47C69AB1C4DE48D00CDA60C /* Reachability.h */,
+				C47C69AC1C4DE48D00CDA60C /* Reachability.m */,
+			);
+			name = BENet;
+			sourceTree = "<group>";
+		};
+		C47C69AF1C4DE52C00CDA60C /* BEModel */ = {
+			isa = PBXGroup;
+			children = (
+				C47C69B01C4DE62F00CDA60C /* BEScrollPageSubject.h */,
+				C47C69B11C4DE62F00CDA60C /* BEScrollPageSubject.m */,
+			);
+			name = BEModel;
+			sourceTree = "<group>";
+		};
+		C47C69B31C4E064F00CDA60C /* BETableView */ = {
+			isa = PBXGroup;
+			children = (
+				C47C69BC1C4E0A3200CDA60C /* 1.jpg */,
+				C47C69BD1C4E0A3200CDA60C /* 2.jpg */,
+				C47C69BE1C4E0A3200CDA60C /* 3.jpg */,
+				C47C69BF1C4E0A3200CDA60C /* 4.jpg */,
+				C47C69C41C4E0A3200CDA60C /* BETableViewRefresh.h */,
+				C47C69C51C4E0A3200CDA60C /* BETableViewRefresh.m */,
+				C47C69C01C4E0A3200CDA60C /* BELoadMoreView.h */,
+				C47C69C11C4E0A3200CDA60C /* BELoadMoreView.m */,
+				C47C69C21C4E0A3200CDA60C /* BERefreshHeaderView.h */,
+				C47C69C31C4E0A3200CDA60C /* BERefreshHeaderView.m */,
+				C47C69B71C4E06CD00CDA60C /* BETableViewCell.h */,
+				C47C69B81C4E06CD00CDA60C /* BETableViewCell.m */,
+				C47C69B91C4E06CD00CDA60C /* BETableViewCell.xib */,
+			);
+			name = BETableView;
+			sourceTree = "<group>";
+		};
 		C47D82CE1C4DC73500C8BE11 = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +249,8 @@
 		C47D830E1C4DC76D00C8BE11 /* BEZhiHu */ = {
 			isa = PBXGroup;
 			children = (
-				C47D83211C4DC77800C8BE11 /* BEMainView */,
+				C44401161C4E2EE9005DE1D7 /* BEDetalPage(详情) */,
+				C44401151C4E2ECB005DE1D7 /* BEMainPage(主页) */,
 				C47D830F1C4DC76D00C8BE11 /* AppDelegate.h */,
 				C47D83101C4DC76D00C8BE11 /* AppDelegate.m */,
 				C47D83111C4DC76D00C8BE11 /* Assets.xcassets */,
@@ -161,8 +258,7 @@
 				C47D83141C4DC76D00C8BE11 /* Main.storyboard */,
 				C47D83161C4DC76D00C8BE11 /* Info.plist */,
 				C47D83171C4DC76D00C8BE11 /* main.m */,
-				C47D83181C4DC76D00C8BE11 /* ViewController.h */,
-				C47D83191C4DC76D00C8BE11 /* ViewController.m */,
+				C47C69A71C4DDC5F00CDA60C /* PrefixHeader.pch */,
 			);
 			path = BEZhiHu;
 			sourceTree = "<group>";
@@ -170,6 +266,7 @@
 		C47D83211C4DC77800C8BE11 /* BEMainView */ = {
 			isa = PBXGroup;
 			children = (
+				C47C69B31C4E064F00CDA60C /* BETableView */,
 				C47D83221C4DC7BE00C8BE11 /* BEMainView.h */,
 				C47D83231C4DC7BE00C8BE11 /* BEMainView.m */,
 				C47D83251C4DCB0400C8BE11 /* BETableHeaderView.h */,
@@ -287,9 +384,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C47D831E1C4DC76D00C8BE11 /* Info.plist in Resources */,
+				C47C69BB1C4E06CD00CDA60C /* BETableViewCell.xib in Resources */,
+				C47C69C71C4E0A3200CDA60C /* 2.jpg in Resources */,
 				C47D831D1C4DC76D00C8BE11 /* Main.storyboard in Resources */,
+				C47C69C61C4E0A3200CDA60C /* 1.jpg in Resources */,
 				C47D831B1C4DC76D00C8BE11 /* Assets.xcassets in Resources */,
+				C47C69C91C4E0A3200CDA60C /* 4.jpg in Resources */,
 				C47D831C1C4DC76D00C8BE11 /* LaunchScreen.storyboard in Resources */,
+				C47C69C81C4E0A3200CDA60C /* 3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,11 +464,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C44401191C4E2F31005DE1D7 /* BEDetailViewController.m in Sources */,
 				C47D83201C4DC76D00C8BE11 /* ViewController.m in Sources */,
 				C47C69A61C4DD57300CDA60C /* BEScrollAndPageView.m in Sources */,
+				C47C69AE1C4DE48D00CDA60C /* Reachability.m in Sources */,
+				C47C69B21C4DE62F00CDA60C /* BEScrollPageSubject.m in Sources */,
 				C47D83271C4DCB0400C8BE11 /* BETableHeaderView.m in Sources */,
 				C47D831F1C4DC76D00C8BE11 /* main.m in Sources */,
+				C47C69AD1C4DE48D00CDA60C /* BEAFNetworking.m in Sources */,
 				C47D83241C4DC7BE00C8BE11 /* BEMainView.m in Sources */,
+				C47C69BA1C4E06CD00CDA60C /* BETableViewCell.m in Sources */,
+				C47C69CA1C4E0A3200CDA60C /* BELoadMoreView.m in Sources */,
+				C47C69CB1C4E0A3200CDA60C /* BERefreshHeaderView.m in Sources */,
+				C47C69CC1C4E0A3200CDA60C /* BETableViewRefresh.m in Sources */,
 				C47D831A1C4DC76D00C8BE11 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +619,8 @@
 			baseConfigurationReference = A1E5B83DBE49BB8C0E352928 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BEZhiHu/PrefixHeader.pch";
 				INFOPLIST_FILE = BEZhiHu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = company.BEZhiHu;
@@ -521,6 +633,8 @@
 			baseConfigurationReference = FD44B3898E63650EF5A74D66 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BEZhiHu/PrefixHeader.pch";
 				INFOPLIST_FILE = BEZhiHu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = company.BEZhiHu;

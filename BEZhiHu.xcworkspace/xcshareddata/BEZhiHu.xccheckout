@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C94F3E08-CEC9-4D31-AFB6-FF6494522692</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BEZhiHu</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1411D6F09327B38C55E511936D6F31656452326A</key>
+		<string>https://github.com/rockerliang/BEZhiHu.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BEZhiHu.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1411D6F09327B38C55E511936D6F31656452326A</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rockerliang/BEZhiHu.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1411D6F09327B38C55E511936D6F31656452326A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1411D6F09327B38C55E511936D6F31656452326A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BEZhiHu</string>
+		</dict>
+	</array>
+</dict>
+</plist>

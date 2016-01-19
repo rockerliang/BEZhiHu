@@ -27,11 +27,14 @@
 
 -(void)shouldAutoShow:(BOOL)shouldStart;
 
+
 @end
 
 @protocol BEcrollViewViewDelegate <NSObject>
 
 @optional
 - (void)didClickPage:(BEScrollAndPageView *)view atIndex:(NSInteger)index;
+- (void)scrollNextImgView:(NSInteger)pageNum;
+
 
 @end

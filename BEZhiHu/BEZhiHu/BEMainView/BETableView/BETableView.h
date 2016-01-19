@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BETableView.h
 //  BEZhiHu
 //
 //  Created by ihefe26 on 16/1/19.
@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BEMainView.h"
-#import "BEDetailViewController.h"
 
-@interface ViewController : UIViewController
-
+@interface BETableView : UITableView
 
 @end
-
