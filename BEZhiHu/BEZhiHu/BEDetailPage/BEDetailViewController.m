@@ -18,10 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.scrollViewBE = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    self.scrollViewBE.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + (self.view.frame.size.height - 64) / 2);
-    [self.view addSubview:self.scrollViewBE];
-
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -34,16 +31,25 @@
 #pragma -mark 初始化imageView 和 webView
 -(void)initImageViewBEAndWebViewBEByID:(NSString *)noteID
 {
-    self.imageViewBE = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, (self.view.frame.size.height - 64) / 2)];
-    self.webViewBE = [[UIWebView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height / 2 - 32, self.view.frame.size.width, self.view.frame.size.height / 2 + 32)];
+    self.imageViewBE = [[UIImageView alloc] initWithFrame:CGRectMake(0, -80, self.view.frame.size.width, (self.view.frame.size.height - 64) / 2)];
+    self.webViewBE = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.webViewBE.scrollView setScrollEnabled:YES];
+
+    UIEdgeInsets contentInset= UIEdgeInsetsMake(0,.0f,.0f,.0f);
+    [self.webViewBE.scrollView setContentInset:contentInset];
+    //在scrollView中设置空隙给headView
+    [self.webViewBE.scrollView setContentOffset:CGPointMake(0, 0)];
+    [self.webViewBE.scrollView addSubview:self.imageViewBE];
     NSString *url = [NSString stringWithFormat:@"%@%@",GetBigImageByIdURL,noteID];
+    
     [BEAFNetworking get:url params:nil success:^(id responseObj) {
         NSURL *urlImage = [NSURL URLWithString:responseObj[@"image"]];
         [self.imageViewBE setImageWithURL:urlImage];
-        [self.scrollViewBE addSubview:self.imageViewBE];
-        self.webViewBE.scalesPageToFit = YES;
-        [self.webViewBE loadHTMLString:responseObj[@"body"] baseURL:nil];
-        [self.scrollViewBE addSubview:self.webViewBE];
+        //self.webViewBE.scalesPageToFit = YES;
+        [self.webViewBE loadHTMLString:[self handleHTMLString:responseObj] baseURL:nil];
+        NSLog(@"%@", responseObj[@"body"]);
+//        self.webViewBE.scalesPageToFit = YES;
+        [self.view addSubview:self.webViewBE];
     } failure:^(NSError *error) {
         NSLog(@"error:%@",error);
     }];
@@ -51,6 +57,29 @@
 }
 
 
+- (NSString *)handleHTMLString:(NSDictionary *)htmlString
+{
+    NSMutableString *toReturn = [NSMutableString string];
+    
+    [toReturn appendString:@"<!DOCTYPE html><html><head><title></title><link rel=\"stylesheet\" type=\"text/css\" href=\"http://news-at.zhihu.com/css/news_qa.auto.css?v=77778\"></head><body>"];
+    [toReturn appendString:htmlString[@"body"]];
+    [toReturn appendString:@"</body></html>"];
+    
+    return toReturn;
+}
+
+//- (NSString *)handleHTMLString:(NSString *)htmlString
+//{
+//    NSMutableString *toReturn = nil;
+//    
+//    toReturn = [htmlString mutableCopy];
+//    [toReturn replaceOccurrencesOfString:@".jpg\"" withString:@".jpg\" width=\"300\"" options:NSLiteralSearch range:NSMakeRange(0, htmlString.length)];
+//    [toReturn replaceOccurrencesOfString:@".png\"" withString:@".png\" width=\"300\"" options:NSLiteralSearch range:NSMakeRange(0, htmlString.length)];
+//    
+//    
+//    
+//    return toReturn;
+//}
 
 
 - (void)didReceiveMemoryWarning {

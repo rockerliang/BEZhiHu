@@ -10,7 +10,6 @@
 
 @interface BEDetailViewController : UIViewController
 
-@property (nonatomic, strong) UIScrollView *scrollViewBE;
 
 @property (nonatomic, strong) UIImageView *imageViewBE;
 
