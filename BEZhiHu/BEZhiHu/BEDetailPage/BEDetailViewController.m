@@ -31,14 +31,14 @@
 #pragma -mark 初始化imageView 和 webView
 -(void)initImageViewBEAndWebViewBEByID:(NSString *)noteID
 {
-    self.imageViewBE = [[UIImageView alloc] initWithFrame:CGRectMake(0, -40 , self.view.frame.size.width, (self.view.frame.size.height - 64) / 2)];
-    self.webViewBE = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.imageViewBE = [[UIImageView alloc] initWithFrame:CGRectMake(0, -100 , self.view.frame.size.width, 300)];
+    self.webViewBE = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height )];
     [self.webViewBE.scrollView setScrollEnabled:YES];
 
-    UIEdgeInsets contentInset= UIEdgeInsetsMake(0,.0f,.0f,.0f);
+    UIEdgeInsets contentInset= UIEdgeInsetsMake(0.f,.0f,.0f,.0f);
     [self.webViewBE.scrollView setContentInset:contentInset];
     //在scrollView中设置空隙给headView
-    [self.webViewBE.scrollView setContentOffset:CGPointMake(0, 0)];
+   // [self.webViewBE.scrollView setContentOffset:CGPointMake(0, -200)];
     [self.webViewBE.scrollView addSubview:self.imageViewBE];
     NSString *url = [NSString stringWithFormat:@"%@%@",GetBigImageByIdURL,noteID];
     

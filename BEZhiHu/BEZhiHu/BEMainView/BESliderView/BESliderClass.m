@@ -130,4 +130,6 @@ static BESliderClass *sliderClass = nil;
 
 
 
+
+
 @end

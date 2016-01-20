@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 #import <objc/message.h>
+#import <sys/utsname.h>
 
 @interface BEAFNetworking : NSObject
 
@@ -33,6 +34,8 @@
     #waring : 当状态栏被隐藏的时候，无法使用此方法
  */
 +(NSString *)getNowNetStatus;
+
+
 
 
 @end

@@ -26,4 +26,6 @@
 //根据滑动距离出现sliderView
 -(void)showSliderViewByScrollX:(CGFloat)x inView:(UIView *)view andMoveView:(UIView *)viewM andMoveViewOriginX:(CGFloat)originx;
 
+
+
 @end
