@@ -62,6 +62,8 @@
 -(void)didClickPage:(BEScrollAndPageView *)view atIndex:(NSInteger)index
 {
     NSLog(@"点击了第%ld页",(long)index);
+    BEScrollPageSubject *subject = self.imageArray[index - 1];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pushToDetailController" object:subject];
 }
 
 #pragma mark scrollerView跳转到下一页，主要改变图片上新闻标题

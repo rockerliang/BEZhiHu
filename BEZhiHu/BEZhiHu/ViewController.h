@@ -11,6 +11,15 @@
 #import "BEDetailViewController.h"
 
 @interface ViewController : UIViewController
+{
+    CGPoint originP;
+    CGFloat move;
+    
+    CGFloat originX;
+    BEMainView *mainView;
+}
+
+@property (nonatomic, strong) UIButton *itemBtn;
 
 
 @end

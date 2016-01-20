@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4FF3B8E96937105A3B069DCC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB511F3D7AA69B37E89411F /* libPods.a */; };
 		C44401191C4E2F31005DE1D7 /* BEDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44401181C4E2F31005DE1D7 /* BEDetailViewController.m */; };
+		C44401201C4F2431005DE1D7 /* BESliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C444011C1C4F2431005DE1D7 /* BESliderTableViewCell.m */; };
+		C44401211C4F2431005DE1D7 /* BESliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C444011D1C4F2431005DE1D7 /* BESliderTableViewCell.xib */; };
+		C44401221C4F2431005DE1D7 /* BESliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C444011F1C4F2431005DE1D7 /* BESliderView.m */; };
+		C44401251C4F2A13005DE1D7 /* BESliderClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C44401241C4F2A13005DE1D7 /* BESliderClass.m */; };
 		C47C69A61C4DD57300CDA60C /* BEScrollAndPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C69A51C4DD57300CDA60C /* BEScrollAndPageView.m */; };
 		C47C69AD1C4DE48D00CDA60C /* BEAFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C69AA1C4DE48D00CDA60C /* BEAFNetworking.m */; };
 		C47C69AE1C4DE48D00CDA60C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C69AC1C4DE48D00CDA60C /* Reachability.m */; };
@@ -57,6 +61,13 @@
 		A1E5B83DBE49BB8C0E352928 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C44401171C4E2F31005DE1D7 /* BEDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEDetailViewController.h; path = BEDetailPage/BEDetailViewController.h; sourceTree = "<group>"; };
 		C44401181C4E2F31005DE1D7 /* BEDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEDetailViewController.m; path = BEDetailPage/BEDetailViewController.m; sourceTree = "<group>"; };
+		C444011B1C4F2431005DE1D7 /* BESliderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BESliderTableViewCell.h; path = BEMainView/BESliderView/BESliderTableViewCell.h; sourceTree = "<group>"; };
+		C444011C1C4F2431005DE1D7 /* BESliderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BESliderTableViewCell.m; path = BEMainView/BESliderView/BESliderTableViewCell.m; sourceTree = "<group>"; };
+		C444011D1C4F2431005DE1D7 /* BESliderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BESliderTableViewCell.xib; path = BEMainView/BESliderView/BESliderTableViewCell.xib; sourceTree = "<group>"; };
+		C444011E1C4F2431005DE1D7 /* BESliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BESliderView.h; path = BEMainView/BESliderView/BESliderView.h; sourceTree = "<group>"; };
+		C444011F1C4F2431005DE1D7 /* BESliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BESliderView.m; path = BEMainView/BESliderView/BESliderView.m; sourceTree = "<group>"; };
+		C44401231C4F2A13005DE1D7 /* BESliderClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BESliderClass.h; path = BEMainView/BESliderView/BESliderClass.h; sourceTree = "<group>"; };
+		C44401241C4F2A13005DE1D7 /* BESliderClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BESliderClass.m; path = BEMainView/BESliderView/BESliderClass.m; sourceTree = "<group>"; };
 		C47C69A41C4DD57300CDA60C /* BEScrollAndPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEScrollAndPageView.h; path = BEMainView/BEScrollAndPageView.h; sourceTree = "<group>"; };
 		C47C69A51C4DD57300CDA60C /* BEScrollAndPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEScrollAndPageView.m; path = BEMainView/BEScrollAndPageView.m; sourceTree = "<group>"; };
 		C47C69A71C4DDC5F00CDA60C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -166,6 +177,20 @@
 			name = "BEDetalPage(详情)";
 			sourceTree = "<group>";
 		};
+		C444011A1C4F23F2005DE1D7 /* BESliderView */ = {
+			isa = PBXGroup;
+			children = (
+				C44401231C4F2A13005DE1D7 /* BESliderClass.h */,
+				C44401241C4F2A13005DE1D7 /* BESliderClass.m */,
+				C444011E1C4F2431005DE1D7 /* BESliderView.h */,
+				C444011F1C4F2431005DE1D7 /* BESliderView.m */,
+				C444011B1C4F2431005DE1D7 /* BESliderTableViewCell.h */,
+				C444011C1C4F2431005DE1D7 /* BESliderTableViewCell.m */,
+				C444011D1C4F2431005DE1D7 /* BESliderTableViewCell.xib */,
+			);
+			name = BESliderView;
+			sourceTree = "<group>";
+		};
 		C47C69A81C4DE46200CDA60C /* BENet */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +291,7 @@
 		C47D83211C4DC77800C8BE11 /* BEMainView */ = {
 			isa = PBXGroup;
 			children = (
+				C444011A1C4F23F2005DE1D7 /* BESliderView */,
 				C47C69B31C4E064F00CDA60C /* BETableView */,
 				C47D83221C4DC7BE00C8BE11 /* BEMainView.h */,
 				C47D83231C4DC7BE00C8BE11 /* BEMainView.m */,
@@ -388,6 +414,7 @@
 				C47C69C71C4E0A3200CDA60C /* 2.jpg in Resources */,
 				C47D831D1C4DC76D00C8BE11 /* Main.storyboard in Resources */,
 				C47C69C61C4E0A3200CDA60C /* 1.jpg in Resources */,
+				C44401211C4F2431005DE1D7 /* BESliderTableViewCell.xib in Resources */,
 				C47D831B1C4DC76D00C8BE11 /* Assets.xcassets in Resources */,
 				C47C69C91C4E0A3200CDA60C /* 4.jpg in Resources */,
 				C47D831C1C4DC76D00C8BE11 /* LaunchScreen.storyboard in Resources */,
@@ -476,7 +503,10 @@
 				C47C69BA1C4E06CD00CDA60C /* BETableViewCell.m in Sources */,
 				C47C69CA1C4E0A3200CDA60C /* BELoadMoreView.m in Sources */,
 				C47C69CB1C4E0A3200CDA60C /* BERefreshHeaderView.m in Sources */,
+				C44401201C4F2431005DE1D7 /* BESliderTableViewCell.m in Sources */,
+				C44401251C4F2A13005DE1D7 /* BESliderClass.m in Sources */,
 				C47C69CC1C4E0A3200CDA60C /* BETableViewRefresh.m in Sources */,
+				C44401221C4F2431005DE1D7 /* BESliderView.m in Sources */,
 				C47D831A1C4DC76D00C8BE11 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,6 +652,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BEZhiHu/PrefixHeader.pch";
 				INFOPLIST_FILE = BEZhiHu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = company.BEZhiHu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -636,6 +667,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BEZhiHu/PrefixHeader.pch";
 				INFOPLIST_FILE = BEZhiHu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = company.BEZhiHu;
 				PRODUCT_NAME = "$(TARGET_NAME)";

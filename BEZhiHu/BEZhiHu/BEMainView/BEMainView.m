@@ -15,10 +15,10 @@
     self = [super initWithFrame:frame];
     if(self)
     {
-        self.topItemView = [[UIView alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width, 64)];
+        self.topItemView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.frame.size.width, 64)];
         self.topItemView.backgroundColor = [UIColor blueColor];
         self.topItemView.alpha = 0.0f;
-        UILabel *itemLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width / 2 - 40, 68, 80, 20)];
+        UILabel *itemLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width / 2 - 40, 48, 80, 20)];
         itemLabel.text = @"今日热闻";
         itemLabel.textAlignment = NSTextAlignmentCenter;
         itemLabel.textColor = [UIColor whiteColor];
@@ -26,8 +26,7 @@
         self.dataArray = [NSMutableArray array];
         
         self.headerView = [[BETableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, (self.frame.size.height - 64) / 2)];
-       // self.headerView.backgroundColor = [UIColor redColor];
-        self.tableViewBE = [[BETableViewRefresh alloc] initWithFrame:CGRectMake(0, -40, self.frame.size.width, self.frame.size.height + 40)];
+        self.tableViewBE = [[BETableViewRefresh alloc] initWithFrame:CGRectMake(0, -20, self.frame.size.width, self.frame.size.height + 20)];
         self.tableViewBE.delegate = self;
         self.tableViewBE.tableViewBE.tableHeaderView = self.headerView;
         [self addSubview:self.tableViewBE];
@@ -56,6 +55,7 @@
             subject.noteID = dic[@"id"];
             subject.title = dic[@"title"];
             subject.imageUrl = dic[@"images"][0];
+            
             if(i < 6)
             {
                 NSString *urlBigImage = [NSString stringWithFormat:@"%@%@",GetBigImageByIdURL,dic[@"id"]];
@@ -69,7 +69,12 @@
                 } failure:^(NSError *error) {
                     NSLog(@"%@",error);
                 }];
-            }else
+            }
+            if(arr.count > 9 && i > 5)
+            {
+                [self.dataArray addObject:subject];
+            }
+            if(arr.count <= 9)
             {
                 [self.dataArray addObject:subject];
             }
@@ -118,7 +123,7 @@
         self.topItemView.alpha = yMove / 64;
     }else
     {
-//        self.headerView.scrollandPageView.frame = 
+    
     }
 }
 
