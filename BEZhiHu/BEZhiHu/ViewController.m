@@ -41,7 +41,7 @@
     self.navigationController.navigationBarHidden = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushToDetailController:) name:@"pushToDetailController" object:nil];
 }
-
+ 
 //移除通知
 -(void)viewWillDisappear:(BOOL)animated
 {
